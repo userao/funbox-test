@@ -26,6 +26,9 @@ $color-inactive: #B3B3B3
     .item_inactive
         .item__weight
             background: $color-inactive
+            
+    .item_inactive ~ .item__bottom-text
+            color: #FFFF66
         
     .item:before,
     .item:after
@@ -118,10 +121,7 @@ $color-inactive: #B3B3B3
         left: 4px
         overflow: hidden
         border-radius: 8px
-
-        .item__image
-            position: absolute
-            bottom: -90px
-            left: -30px
-
+        background-image: url("../../public/assets/images/Photo.png")
+        background-repeat: no-repeat
+        background-position: -40px 220px
     

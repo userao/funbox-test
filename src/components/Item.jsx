@@ -1,11 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { actions as itemsActions } from "../slices/itemSlice";
+import Photo from '../../public/assets/images/Photo.png';
 import "../styles/item.sass";
 
 const Item = ({ item }) => {
   const dispatch = useDispatch();
   const { id, active, flavor, weight, hovered, selected } = item;
+  const image = new Image();
+  image.src = Photo;
 
   const flavors = {
     fish: "с рыбой",
@@ -45,7 +48,7 @@ const Item = ({ item }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={active ? handleClick : null}
-        className={`item item_${selected ? "selected" : "default"} ${active ? null : 'item_inactive'}`}>
+        className={`item item_${selected ? "selected" : "default"} ${active ? '' : 'item_inactive'}`}>
         <div className="item__description">
           <p className="slogan">
             {selected && hovered ? "Котэ не одобряет?" : "Сказочное заморское яство"}
@@ -57,9 +60,7 @@ const Item = ({ item }) => {
           <p className="value">{weight}</p>
           <p className="unit">кг</p>
         </div>
-        <div className="item__image-container">
-          <img className="item__image" src="../../assets/images/Photo.png" />
-        </div>
+        <div className="item__image-container" />
       </div>
       {active
         ? bottomTextElement
