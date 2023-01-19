@@ -1,15 +1,12 @@
-# 🚀 Welcome to your new awesome project!
+# Funbox test project
 
-This project has been created using **webpack-cli**, you can now run
+Build:
 
 ```
 npm run build
 ```
 
-or
-
+Build on versel:
 ```
-yarn build
+https://funbox-test-iota.vercel.app
 ```
-
-to bundle your application
