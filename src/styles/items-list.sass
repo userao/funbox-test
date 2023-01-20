@@ -1,6 +1,13 @@
+$margins: calc(100vw*.125)
+$medium: 900px
+    
 .items-list
-    width: calc(100vw - 5rem)
-    max-width: 1120px
-    min-width: 1000px
     display: flex
-    justify-content: space-between
+    flex-wrap: wrap
+    justify-content: space-evenly
+    min-width: 1220px
+    margin: 0 auto
+
+    @media screen and (max-width: $medium) 
+        min-width: 0
+    

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { actions as itemsActions } from "../slices/itemSlice";
-import Photo from '../../public/assets/images/Photo.png';
+import Photo from "../../public/assets/images/Photo.png";
 import "../styles/item.sass";
 
 const Item = ({ item }) => {
@@ -28,19 +28,19 @@ const Item = ({ item }) => {
     inactive: <p className="item__bottom-text">Печалька, {flavors[flavor]} закончился.</p>,
   };
 
-  const bottomTextElement = selected ? bottomTextElements[flavor]: bottomTextElements.default;
+  const bottomTextElement = selected ? bottomTextElements[flavor] : bottomTextElements.default;
 
   function handleMouseEnter() {
     dispatch(itemsActions.updateItem({ id, changes: { hovered: true } }));
-  };
+  }
 
   function handleMouseLeave() {
     dispatch(itemsActions.updateItem({ id, changes: { hovered: false } }));
-  };
+  }
 
   function handleClick() {
     dispatch(itemsActions.updateItem({ id, changes: { selected: !selected } }));
-  };
+  }
 
   return (
     <div className="item__container">
@@ -48,7 +48,9 @@ const Item = ({ item }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={active ? handleClick : null}
-        className={`item item_${selected ? "selected" : "default"} ${active ? '' : 'item_inactive'}`}>
+        className={`item item_${selected ? "selected" : "default"} ${
+          active ? "" : "item_inactive"
+        }`}>
         <div className="item__description">
           <p className="slogan">
             {selected && hovered ? "Котэ не одобряет?" : "Сказочное заморское яство"}
@@ -62,9 +64,7 @@ const Item = ({ item }) => {
         </div>
         <div className="item__image-container" />
       </div>
-      {active
-        ? bottomTextElement
-        : bottomTextElements.inactive}
+      {active ? bottomTextElement : bottomTextElements.inactive}
     </div>
   );
 };
