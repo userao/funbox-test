@@ -22,6 +22,9 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      }
     }),
   ],
   module: {
@@ -38,10 +41,6 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      }
     ],
   },
 };
